@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:8
+    container_name: db
+    environment:
+        MYSQL_DATABASE: "springbootdb"
+        MYSQL_ROOT_PASSWORD: "rootpassword"
+        MYSQL_USER: "springbootuser"
+        MYSQL_PASSWORD: "springbootpassword"
+    ports:
+        - "3306:3306"
+    volumes:
+      - "springboot-mysql:/var/lib/mysql"
+
+volumes:
+    springboot-mysql:
